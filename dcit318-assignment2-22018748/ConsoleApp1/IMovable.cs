@@ -1,40 +1,40 @@
 ﻿using System;
-    // Interface Definition
-    public interface IMovable
+// Interface Definition
+public interface IMovable
+{
+    void Move();
+}
+
+// Class implementing IMovable
+public class Car : IMovable
+{
+    public void Move()
     {
-        void Move();
+        Console.WriteLine("Car is moving");
     }
+}
 
-    // Class implementing IMovable
-    public class Car : IMovable
+// Another class implementing IMovable
+public class Bicycle : IMovable
+{
+    public void Move()
     {
-        public void Move()
-        {
-            Console.WriteLine("Car is moving");
-        }
+        Console.WriteLine("Bicycle is moving");
     }
+}
 
-    // Another class implementing IMovable
-    public class Bicycle : IMovable
+class InterfaceDemo
+{
+    public static void Run()
     {
-        public void Move()
-        {
-            Console.WriteLine("Bicycle is moving");
-        }
+        Console.WriteLine("--- Task 3: Interfaces ---");
+
+        IMovable myCar = new Car();
+        IMovable myBicycle = new Bicycle();
+
+        myCar.Move();
+        myBicycle.Move();
+
+        Console.WriteLine();
     }
-
-    class InterfaceDemo
-    {
-        public static void Run()
-        {
-            Console.WriteLine("--- Task 3: Interfaces ---");
-
-            IMovable myCar = new Car();
-            IMovable myBicycle = new Bicycle();
-
-            myCar.Move();
-            myBicycle.Move();
-
-            Console.WriteLine();
-        }
-    }
+}
